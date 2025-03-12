@@ -65,7 +65,6 @@ export default function NotePage({ params }: { params: { id: string } }) {
     }
   };
 
-  // Format date for display
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat("en-US", {

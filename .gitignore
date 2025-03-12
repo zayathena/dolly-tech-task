@@ -136,3 +136,5 @@ dist
 .pnp.*
 
 .data/
+INTERVIEWER_NOTES.md
+.INTERVIEWER_NOTES.hidden

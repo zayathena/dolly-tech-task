@@ -18,8 +18,6 @@ export default function NoteList({ notes, onDelete }: NoteListProps) {
     );
   }
 
-  // BUG: Missing accessibility features for screen readers
-  // TASK: Add proper ARIA attributes and keyboard navigation
   return (
     <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {notes.map((note) => (

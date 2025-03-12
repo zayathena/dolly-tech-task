@@ -47,8 +47,6 @@ class StorageService {
   private async saveAll(notes: Note[]): Promise<void> {
     try {
       await this.ensureDataDir();
-      // BUG: Race condition possible here with concurrent writes
-      // TASK: Implement proper file locking or atomicity for concurrent writes
       await fsPromises.writeFile(
         this.NOTES_FILE,
         JSON.stringify(notes, null, 2)
@@ -153,9 +151,11 @@ class StorageService {
         return null;
       }
 
+      // BUG #2: Not preserving the createdAt date during updates
       const updatedNote: Note = {
         ...notes[noteIndex],
         ...updateNoteDto,
+        createdAt: new Date().toISOString(), // This should preserve the original createdAt date
         updatedAt: new Date().toISOString(),
       };
 

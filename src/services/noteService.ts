@@ -1,16 +1,11 @@
 import { Note, CreateNoteDto, UpdateNoteDto, ApiResponse } from "@/models/Note";
 
-/**
- * Service to handle API calls for notes
- * This demonstrates how to handle API requests in a client-side service
- */
 export const noteService = {
   // Get all notes
   async getAllNotes(search?: string): Promise<Note[]> {
     try {
       const queryParams = search ? `?search=${encodeURIComponent(search)}` : "";
       const response = await fetch(`/api/notes${queryParams}`, {
-        // Next.js App Router requires this to be specified for dynamic data
         cache: "no-store",
       });
       const result = (await response.json()) as ApiResponse<Note[]>;
@@ -80,8 +75,9 @@ export const noteService = {
   // Update an existing note
   async updateNote(id: string, updateNoteDto: UpdateNoteDto): Promise<Note> {
     try {
+      // BUG #1: Incorrect HTTP method for updating - using POST instead of PUT
       const response = await fetch(`/api/notes/${id}`, {
-        method: "PUT",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -112,8 +108,6 @@ export const noteService = {
         method: "DELETE",
       });
 
-      // BUG: This doesn't properly handle non-JSON responses
-      // TASK: Implement proper error handling for non-JSON responses
       const result = (await response.json()) as ApiResponse<null>;
 
       if (!result.success) {
@@ -124,4 +118,3 @@ export const noteService = {
       throw error;
     }
   },
-};

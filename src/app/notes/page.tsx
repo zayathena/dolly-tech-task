@@ -20,10 +20,7 @@ export default function NotesPage() {
   const loadNotes = async (search?: string) => {
     try {
       setLoading(true);
-      // Fetch notes using the noteService
       const fetchedNotes = await noteService.getAllNotes(search);
-      // BUG: Console log left in production code
-      // TASK: Remove debug logging statements
       console.log(fetchedNotes);
       setNotes(fetchedNotes);
       setError(null);
@@ -37,8 +34,6 @@ export default function NotesPage() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // BUG: No debouncing on search input
-    // TASK: Implement debouncing for search to prevent too many API calls
     loadNotes(searchTerm);
   };
 

@@ -53,9 +53,6 @@ export default function NoteForm({
         content: content.trim(),
       };
 
-      // Call the provided onSubmit handler
-      await onSubmit(data);
-
       // Redirect to notes list after successful submission
       router.push("/notes");
       router.refresh();
