@@ -10,6 +10,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   // TODO: Candidates should implement this component
   // This is just a basic structure to get started
   return (
@@ -20,12 +21,6 @@ export default function Navigation() {
             <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
               Note App
             </Link>
-          </div>
-
-          <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-gray-800 dark:text-white">
-              ☰
-            </button>
           </div>
 
           <div className="space-x-4 dark:text-white">
@@ -63,8 +58,54 @@ export default function Navigation() {
             </Link>
             <ThemeSwitch/>
           </div>
-        </div>
+          
+          <div className="lg:hidden">
+            <button onClick={toggleMenu} className="text-gray-800 dark:text-white">
+              ☰
+            </button>
+          </div>
+          </div>
+          {isMenuOpen && (
+          <div className="lg:hidden mt-4">
+            <div className="flex flex-col space-y-4">
+              <Link
+                href="/notes"
+                className={`${
+                  pathname === "/notes" ? "text-blue-600" : "text-gray-800"
+                } hover:text-blue-500 dark:text-white`}
+              >
+                All Notes
+              </Link>
+              <Link
+                href="/notes/new"
+                className={`${
+                  pathname === "/notes/new" ? "text-blue-600" : "text-gray-800"
+                } hover:text-blue-500 dark:text-white`}
+              >
+                New Note
+              </Link>
+              <Link
+                href="/about"
+                className={`${
+                  pathname === "/about" ? "text-blue-600" : "text-gray-800"
+                } hover:text-blue-500 dark:text-white`}
+              >
+                About
+              </Link>
+              <Link
+                href="/login"
+                className={`${
+                  pathname === "/login" ? "text-blue-600" : "text-gray-800"
+                } hover:text-blue-500 dark:text-white`}
+              >
+                Login
+              </Link>
+              <ThemeSwitch />
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
 }
+
