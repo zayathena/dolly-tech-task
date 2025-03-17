@@ -28,7 +28,7 @@ export default function NewNotePage() {
         </div>
       )}
 
-      <div className="bg-white shadow rounded-lg p-6">
+      <div className="bg-white shadow rounded-lg p-6 border dark:bg-gray-800">
         <NoteForm onSubmit={handleSubmit} />
       </div>
     </div>

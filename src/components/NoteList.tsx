@@ -13,7 +13,7 @@ export default function NoteList({ notes, onDelete }: NoteListProps) {
   if (notes.length === 0) {
     return (
       <div className="text-center py-8 bg-gray-50 rounded">
-        <p className="text-gray-500">No notes found.</p>
+        <p className="text-gray-500 dark:text-white">No notes found.</p>
       </div>
     );
   }
