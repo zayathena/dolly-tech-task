@@ -109,7 +109,7 @@ export default function NotePage({ params }: { params: { id: string } }) {
       {isEditing ? (
         <>
           <h1 className="text-2xl font-bold mb-6">Edit Note</h1>
-          <div className="bg-white shadow rounded-lg p-6">
+          <div className="bg-white shadow rounded-lg p-6 dark:bg-gray-800">
             <NoteForm note={note} onSubmit={handleUpdate} isEdit={true} />
           </div>
         </>
@@ -133,14 +133,14 @@ export default function NotePage({ params }: { params: { id: string } }) {
             </div>
           </div>
 
-          <div className="bg-white shadow rounded-lg p-6">
-            <div className="text-sm text-gray-500 mb-4">
+          <div className="bg-white shadow rounded-lg p-6 dark:bg-gray-800 border">
+            <div className="text-sm text-gray-500 mb-4 text-xs dark:text-gray-100">
               <p>Created: {formatDate(note.createdAt)}</p>
               <p>Last updated: {formatDate(note.updatedAt)}</p>
             </div>
 
-            <div className="prose max-w-none">
-              <p className="whitespace-pre-line">{note.content}</p>
+            <div className="prose max-w-none dark:bg-gray-800">
+              <p className="whitespace-pre-line dark:text-white">{note.content}</p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-gray-100">
