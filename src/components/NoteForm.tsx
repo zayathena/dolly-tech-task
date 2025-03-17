@@ -53,6 +53,7 @@ export default function NoteForm({
         content: content.trim(),
       };
 
+      await onSubmit(data);
       // Redirect to notes list after successful submission
       router.push("/notes");
       router.refresh();
@@ -118,7 +119,7 @@ export default function NoteForm({
           type="submit"
           disabled={isSubmitting}
           className={`px-4 py-2 rounded text-white ${
-            isSubmitting ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
+            isSubmitting ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700 border"
           }`}
         >
           {isSubmitting ? "Saving..." : isEdit ? "Update Note" : "Create Note"}
