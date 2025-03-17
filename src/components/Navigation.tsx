@@ -1,13 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   // TODO: Candidates should implement this component
   // This is just a basic structure to get started
   return (
@@ -18,6 +20,12 @@ export default function Navigation() {
             <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
               Note App
             </Link>
+          </div>
+
+          <div className="lg:hidden">
+            <button onClick={toggleMenu} className="text-gray-800 dark:text-white">
+              ☰
+            </button>
           </div>
 
           <div className="space-x-4 dark:text-white">
@@ -36,6 +44,22 @@ export default function Navigation() {
               } hover:text-blue-500 dark:text-white`}
             >
               New Note
+            </Link>
+            <Link
+              href="/about"
+              className={`${
+                pathname === "/about" ? "text-blue-600" : "text-gray-800"
+              } hover:text-blue-500 dark:text-white`}
+            >
+              About
+            </Link>
+            <Link
+              href="/login"
+              className={`${
+                pathname === "/login" ? "text-blue-600" : "text-gray-800"
+              } hover:text-blue-500 dark:text-white`}
+            >
+              Login
             </Link>
             <ThemeSwitch/>
           </div>
