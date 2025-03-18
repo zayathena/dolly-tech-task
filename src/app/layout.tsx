@@ -39,7 +39,7 @@ export default function RootLayout({
           </main>
           <footer className="bg-gray-100 py-4 text-center text-sm text-gray-600 dark:bg-gray-800">
             <div className="container mx-auto dark:text-white dark:bg-gray-800">
-              Note-Taking App - Technical Assessment
+            <p>&copy; {new Date().getFullYear()} NoteApp. All rights reserved.</p>
             </div>
           </footer>
         </div>

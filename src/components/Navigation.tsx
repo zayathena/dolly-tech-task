@@ -16,7 +16,7 @@ export default function Navigation() {
   return (
     <nav className="bg-white shadow dark:bg-gray-800 dark:text-white">
       <div className="container px-6 py-1">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center w-full">
           <div>
             <Link href="/">
             <img src="/logo.lm.png" alt="logo light mode" className="w-45 h-45 dark:hidden"/>
@@ -24,12 +24,15 @@ export default function Navigation() {
             </Link>
           </div>
 
-          <div className="hidden lg:flex space-x-4 dark:text-white">
+          <div className="hidden lg:flex space-x-10 items-center justify-end fixed top-0 left-0 w-full z-50 dark:text-white">
+            <Link href="/" className="hover:text-blue-500 border-2 rounded-md px-3 py-2 dark:text-white dark:hover:text-gray-500">
+            Home
+            </Link>
             <Link
               href="/notes"
               className={`${
                 pathname === "/notes" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
+              } hover:text-blue-500 border-2 rounded-md px-3 py-2 dark:text-white dark:hover:text-gray-500`}
             >
               All Notes
             </Link>
@@ -37,7 +40,7 @@ export default function Navigation() {
               href="/notes/new"
               className={`${
                 pathname === "/notes/new" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
+              } hover:text-blue-500 border-2 rounded-md px-3 py-2 dark:text-white dark:hover:text-gray-500`}
             >
               New Note
             </Link>
@@ -45,7 +48,7 @@ export default function Navigation() {
               href="/about"
               className={`${
                 pathname === "/about" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
+              } hover:text-blue-500 border-2 rounded-md px-3 py-2 dark:text-white dark:hover:text-gray-500`}
             >
               About
             </Link>
@@ -53,14 +56,14 @@ export default function Navigation() {
               href="/login"
               className={`${
                 pathname === "/login" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
+              } hover:text-blue-500 border-2 rounded-md px-3 py-2 dark:text-white dark:hover:text-gray-500`}
             >
               Login
             </Link>
             <ThemeSwitch/>
           </div>
           
-          <div className="lg:hidden">
+          <div className="lg:hidden mt-4">
             <button onClick={toggleMenu} className="text-gray-800 dark:text-white dark:hover:text-gray-500">
               ☰
             </button>
