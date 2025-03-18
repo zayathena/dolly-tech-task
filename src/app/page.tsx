@@ -13,7 +13,7 @@ export default async function HomePage() {
       </h1>
 
       <div className="bg-white shadow rounded-lg p-6 mb-6 dark:bg-gray-800 border">
-        <h2 className="text-xl font-semibold mb-4">About This App</h2>
+        <h2 className="text-2xl font-bold underline text-center mb-4">About This App</h2>
         <p className="mb-4">
         NoteApp is a simple and intuitive note-taking application designed to help you stay organized and productive. With NoteApp, you can:
         </p>
