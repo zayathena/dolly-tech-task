@@ -15,15 +15,16 @@ export default function Navigation() {
   // This is just a basic structure to get started
   return (
     <nav className="bg-white shadow dark:bg-gray-800 dark:text-white">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container px-6 py-1">
         <div className="flex justify-between items-center">
           <div>
-            <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">
-              Note App
+            <Link href="/">
+            <img src="/logo.lm.png" alt="logo light mode" className="w-45 h-45 dark:hidden"/>
+            <img src="/logo.dm.png"alt="logo dark mode" className="w-45 h-45 hidden dark:block"/>
             </Link>
           </div>
 
-          <div className="space-x-4 dark:text-white">
+          <div className="hidden lg:flex space-x-4 dark:text-white">
             <Link
               href="/notes"
               className={`${

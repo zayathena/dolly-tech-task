@@ -134,7 +134,7 @@ export default function NotePage({ params }: { params: { id: string } }) {
           </div>
 
           <div className="bg-white shadow rounded-lg p-6 dark:bg-gray-800 border">
-            <div className="text-sm text-gray-500 mb-4 text-xs dark:text-gray-100">
+            <div className="text-sm text-gray-500 mb-4 text-xs dark:text-gray-100 dark:opacity-60">
               <p>Created: {formatDate(note.createdAt)}</p>
               <p>Last updated: {formatDate(note.updatedAt)}</p>
             </div>
