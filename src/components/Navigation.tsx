@@ -29,7 +29,7 @@ export default function Navigation() {
               href="/notes"
               className={`${
                 pathname === "/notes" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white`}
+              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
             >
               All Notes
             </Link>
@@ -37,7 +37,7 @@ export default function Navigation() {
               href="/notes/new"
               className={`${
                 pathname === "/notes/new" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white`}
+              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
             >
               New Note
             </Link>
@@ -45,7 +45,7 @@ export default function Navigation() {
               href="/about"
               className={`${
                 pathname === "/about" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white`}
+              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
             >
               About
             </Link>
@@ -53,7 +53,7 @@ export default function Navigation() {
               href="/login"
               className={`${
                 pathname === "/login" ? "text-blue-600" : "text-gray-800"
-              } hover:text-blue-500 dark:text-white`}
+              } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
             >
               Login
             </Link>
@@ -61,7 +61,7 @@ export default function Navigation() {
           </div>
           
           <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-gray-800 dark:text-white">
+            <button onClick={toggleMenu} className="text-gray-800 dark:text-white dark:hover:text-gray-500">
               ☰
             </button>
           </div>
@@ -73,7 +73,7 @@ export default function Navigation() {
                 href="/notes"
                 className={`${
                   pathname === "/notes" ? "text-blue-600" : "text-gray-800"
-                } hover:text-blue-500 dark:text-white`}
+                } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
               >
                 All Notes
               </Link>
@@ -81,7 +81,7 @@ export default function Navigation() {
                 href="/notes/new"
                 className={`${
                   pathname === "/notes/new" ? "text-blue-600" : "text-gray-800"
-                } hover:text-blue-500 dark:text-white`}
+                } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
               >
                 New Note
               </Link>
@@ -89,7 +89,7 @@ export default function Navigation() {
                 href="/about"
                 className={`${
                   pathname === "/about" ? "text-blue-600" : "text-gray-800"
-                } hover:text-blue-500 dark:text-white`}
+                } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
               >
                 About
               </Link>
@@ -97,7 +97,7 @@ export default function Navigation() {
                 href="/login"
                 className={`${
                   pathname === "/login" ? "text-blue-600" : "text-gray-800"
-                } hover:text-blue-500 dark:text-white`}
+                } hover:text-blue-500 dark:text-white dark:hover:text-gray-500`}
               >
                 Login
               </Link>

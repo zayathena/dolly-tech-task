@@ -155,7 +155,7 @@ class StorageService {
       const updatedNote: Note = {
         ...notes[noteIndex],
         ...updateNoteDto,
-        createdAt: notes[noteIndex].createdAt, // This should preserve the original createdAt date
+        createdAt: notes[noteIndex].createdAt, // Preserves the original createdAt date
         updatedAt: new Date().toISOString(),
       };
 
