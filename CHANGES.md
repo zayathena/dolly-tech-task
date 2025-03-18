@@ -4,6 +4,7 @@
 2. Changed HTTP request from POST to PUT in noteService.ts.
 3. Added missing state handling in NoteItem.tsx
 4. Added await onSubmit(data) to handleSubmit function to ensure the note is submitted successfully before navigating to the Notes page. 
+5. Preserved the createdAt timestamp during updates.
 
 ### Dark mode 
 1. Implemented dark mode feature using tailwindcss.
